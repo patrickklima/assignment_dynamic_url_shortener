@@ -1,3 +1,19 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
 #greeting {
   color: blue;
+}
+#link-container {
+  height: 20px;
+  width: auto;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  
+}
+.link-data {
+  border: 1px solid black;
 }
