@@ -12,9 +12,12 @@ app.set('view engine', 'handlebars');
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 
+//MIDDLEWARE AND RESOURCES
+app.use(express.static(`${__dirname}/public`));
+
 
 app.get('/', (req, res) => {
-  res.send("hello world")
+  res.render('home',{text:"hello world"});
 });
 
 app.listen(port, () => {
