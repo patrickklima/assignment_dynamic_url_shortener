@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
   <link href="/styling.css" rel="stylesheet" type="text/css">
   <title>Dynamic URL Shortener</title>
 </head>
@@ -11,6 +13,14 @@
   <h1 id="greeting">The Dynamic URL Shortener</h1>
 
   {{{body}}}
-    
+  
 </body>
+  <script>
+    var socket = io.connect(`https://dynamic-url-shortener-patrickklima.c9users.io`);  
+    socket.on("new visit", (id, visits) => {
+      console.log(id);
+      console.log(visits);
+      $(`link-data ${ id }`).last().text(visits);
+    });
+  </script>
 </html>

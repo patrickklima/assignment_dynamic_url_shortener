@@ -1,7 +1,7 @@
 <h2>Shorten a Link</h2>
 <form action='/' method="post">
   URL:<br>
-  <input type="text" name="name" value="">
+  <input type="text" name="url" value="">
   <br><br>
   <input type="submit" value="Submit">
 </form> 
@@ -9,10 +9,13 @@
 <br><br>
 
 <h2>Your Link Stats</h2>
-{{#each link as |link|}}
-  <div id="link-container">
-    <div class="link-data">{{link.URL}}</div>
-    <div class="link-data">{{link.shortLink}}</div>
-    <div class="link-data">{{link.visits}}</div>
-  </div>
-{{/each}}
+  
+  {{#each allLinks as |link|}}
+    <div class="link-container">
+      <div class="link-data {{link.id}}">{{link.url}}</div>
+      <div class="link-data {{link.id}}">{{link.id}}</div>
+      <div class="link-data {{link.id}}">{{link.visits}}</div>
+    </div>
+  {{/each}}
+  
+

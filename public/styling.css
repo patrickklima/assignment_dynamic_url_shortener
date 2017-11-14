@@ -5,7 +5,7 @@ body {
 #greeting {
   color: blue;
 }
-#link-container {
+.link-container {
   height: 20px;
   width: auto;
   display: -webkit-flex;
@@ -15,5 +15,6 @@ body {
   
 }
 .link-data {
+  width: 200px;
   border: 1px solid black;
 }
